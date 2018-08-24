@@ -14,7 +14,14 @@
     
             <div class="project-info untouchable">
 
-                <div class="project-title"><h2>{{ $project->title }}</h2></div>
+                <div class="project-title">
+
+                    <a href="/projects/{{ $project->id }}">
+                        <h2>{{ $project->title }}</h2>
+                    </a>
+                    
+                </div>
+
                 <div class="light-text project-tech"><p>{{ $project->tech }}</p></div>
 
             </div>
