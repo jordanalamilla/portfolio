@@ -2,9 +2,9 @@
 
     <footer>
 
-        <a href="index.html">Github</a>
-        <a href="index.html">LinkedIn</a>
-        <a href="index.html">Blog</a>
+        <a target="_blank" href="https://github.com/jordanalamilla">Github</a>
+        <a target="_blank" href="https://www.linkedin.com/in/jordanalamilla/">LinkedIn</a>
+        <a target="_blank" href="https://blog.jordanalamilla.ca/">Blog</a>
 
         @guest
 
