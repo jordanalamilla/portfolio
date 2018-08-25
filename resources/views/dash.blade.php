@@ -8,7 +8,7 @@
 
         <tr>
             <td><a href="/projects/{{ $project->id }}">{{ $project->title }}</a></td>
-            <td>edit</td>
+            <td><a href="/projects/{{ $project->id }}/edit">edit</a></td>
             <td>delete</td>
         </tr>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Project;
 
 class ProjectsController extends Controller
@@ -99,7 +100,8 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = Project::find( $id );
+        return view( 'projects/edit' )->with( 'project', $project );
     }
 
     /**
@@ -111,7 +113,74 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+
+            'title'         => 'required|max:255',
+            'description'   => 'required',
+            'tech'          => 'required|max:255',
+            'link_live'     => 'required|max:255',
+            'link_github'   => 'required|max:255',
+            'image'         => 'image|max:1999',
+            'gif'           => 'image|max:1999'
+        ]);
+
+        //GET PROJECT TO EDIT
+        $project = Project::find( $id );
+
+        //IF USER HAS UPLOADED A NEW IMAGE
+        if( $request->hasFile( 'image' ) )
+        {
+            //FILE UPLOADS
+            $image = $request->file( 'image' );
+
+            //GENERATE UNIQUE FILE NAME
+            $originalFileName   = $image->getClientOriginalName();
+            $parts              = explode( '.', $originalFileName );
+            $name               = $parts[ 0 ];
+            $ext                = $parts[ 1 ];
+            $time               = time();
+            $finalFileName      = "$name-$time.$ext";
+
+            //DELETE CURRENT IMAGE
+            Storage::delete( 'public/img/projects/image/', $project->image );
+
+            //UPLOAD NEW IMAGE
+            $image->storeAs( 'public/img/projects/image/', $finalFileName );
+
+            $project->image = $finalFileName;
+        }
+
+        if( $request->hasFile( 'gif' ) )
+        {
+            // FILE UPLOADS
+            $gif = $request->file( 'gif' );
+
+            //GENERATE UNIQUE FILE NAME
+            $originalFileName   = $gif->getClientOriginalName();
+            $parts              = explode( '.', $originalFileName );
+            $name               = $parts[ 0 ];
+            $ext                = $parts[ 1 ];
+            $time               = time();
+            $finalFileName      = "$name-$time.$ext";
+
+            //DELETE CURRENT GIF
+            Storage::delete( 'public/img/projects/gif/', $project->gif );
+
+            //UPLOAD NEW GIF
+            $gif->storeAs( 'public/img/projects/gif/', $finalFileName );
+
+            $project->gif = $finalFileName;
+        }
+
+        $project->title         = $request->input( 'title' );
+        $project->description   = $request->input( 'description' );
+        $project->tech          = $request->input( 'tech' );
+        $project->link_live     = $request->input( 'link_live' );
+        $project->link_github   = $request->input( 'link_github' );
+
+        $project->save();
+
+        return redirect( 'dash' )->with( 'success', 'Project successfully updated.' );
     }
 
     /**

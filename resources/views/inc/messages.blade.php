@@ -1,7 +1,7 @@
 @if( session( 'success' ) )
 
     <div class="alert alert-success">
-        {{ session( 'status' ) }}
+        {{ session( 'success' ) }}
     </div>
 
 @elseif( session( 'error' ) )
