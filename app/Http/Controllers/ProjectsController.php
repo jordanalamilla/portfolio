@@ -130,56 +130,34 @@ class ProjectsController extends Controller
         //IF USER HAS UPLOADED A NEW IMAGE
         if( $request->hasFile( 'image' ) )
         {
-            //FILE UPLOADS
+            //GET IMAGE FROM FORM
             $image = $request->file( 'image' );
 
-            //GENERATE UNIQUE FILE NAME
-            $originalFileName   = $image->getClientOriginalName();
-            $parts              = explode( '.', $originalFileName );
-            $name               = $parts[ 0 ];
-            $ext                = $parts[ 1 ];
-            $time               = time();
-            $finalFileName      = "$name-$time.$ext";
-
-            //DELETE CURRENT IMAGE
-            Storage::delete( 'public/img/projects/image/', $project->image );
-
-            //UPLOAD NEW IMAGE
-            $image->storeAs( 'public/img/projects/image/', $finalFileName );
-
-            $project->image = $finalFileName;
+            //OVERWRITE EXISTING IMAGE
+            $image->storeAs( 'public/img/projects/image', $project->image );
         }
 
+        //IF USER HAS UPLOADED A NEW GIF
         if( $request->hasFile( 'gif' ) )
         {
-            // FILE UPLOADS
+            //GET GIF FROM FORM
             $gif = $request->file( 'gif' );
 
-            //GENERATE UNIQUE FILE NAME
-            $originalFileName   = $gif->getClientOriginalName();
-            $parts              = explode( '.', $originalFileName );
-            $name               = $parts[ 0 ];
-            $ext                = $parts[ 1 ];
-            $time               = time();
-            $finalFileName      = "$name-$time.$ext";
-
-            //DELETE CURRENT GIF
-            Storage::delete( 'public/img/projects/gif/', $project->gif );
-
-            //UPLOAD NEW GIF
-            $gif->storeAs( 'public/img/projects/gif/', $finalFileName );
-
-            $project->gif = $finalFileName;
+            //OVERWRITE EXISTING GIF
+            $gif->storeAs( 'public/img/projects/gif', $project->gif );
         }
 
+        //UPDATE ALL TEXT INPUTS
         $project->title         = $request->input( 'title' );
         $project->description   = $request->input( 'description' );
         $project->tech          = $request->input( 'tech' );
         $project->link_live     = $request->input( 'link_live' );
         $project->link_github   = $request->input( 'link_github' );
 
+        //COMMIT UPDATE TO DB
         $project->save();
 
+        //REDIRECT TO DASH
         return redirect( 'dash' )->with( 'success', 'Project successfully updated.' );
     }
 
@@ -191,6 +169,17 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //GET PROJECT MODEL
+        $project = Project::find( $id );
+
+        //DELETE IMAGES
+        Storage::delete( 'public/img/projects/image/' . $project->image );
+        Storage::delete( 'public/img/projects/gif/' . $project->image );
+
+        //DELETE MODEL
+        $project->delete();
+
+        //REDIRECT TO DASH
+        return redirect( 'dash' )->with( 'success', 'Project successfully deleted.' );
     }
 }
