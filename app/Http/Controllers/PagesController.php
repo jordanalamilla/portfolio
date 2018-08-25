@@ -11,10 +11,4 @@ class PagesController extends Controller
     {
         return view( 'about' );
     }
-
-    public function dash()
-    {
-        $projects = Project::all();
-        return view( 'dash' )->with( 'projects', $projects );
-    }
 }

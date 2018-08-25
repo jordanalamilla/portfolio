@@ -13,6 +13,9 @@
 
 Route::get('/', 'ProjectsController@index');
 Route::get('/about', 'PagesController@about');
-Route::get('/dash', 'PagesController@dash');
 
 Route::resource('/projects', 'ProjectsController');
+
+Auth::routes();
+
+Route::get('/dash', 'DashController@index')->name('dash');
