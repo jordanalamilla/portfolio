@@ -8,7 +8,7 @@
 
         @guest
 
-            <a class="nav-link" href="{{ route('login') }}">{{ __('Admin') }}</a>
+            <a href="{{ route('login') }}">{{ __('Admin') }}</a>
             {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
             
         @else

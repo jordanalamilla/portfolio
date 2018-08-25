@@ -35,7 +35,9 @@ strong { font-weight: 700; }
     padding: 0 20%;
 }
 
-
+#project, #login {
+    min-height: calc(100vh - 40px - 65px);
+}
 
 /* ========== HEADINGS ========== */
 
@@ -149,6 +151,31 @@ h1 {
 
 
 
+/* ========== FORMS ========== */
+
+#login form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 25px;
+
+    -webkit-box-shadow: 0px 13px 20px -2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 13px 20px -2px rgba(0,0,0,0.2);
+    box-shadow: 0px 13px 20px -2px rgba(0,0,0,0.2);
+}
+
+.form-input input[type=email],
+.form-input input[type=password] {
+    width: 300px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+
 /* ========== NAVIGATION ========== */
 
 nav {
@@ -177,7 +204,7 @@ nav a:nth-child(2) {
     font-size: 18px;
 }
 
-#nav-link {
+.nav-link {
     float: right;
 }
 
@@ -208,28 +235,24 @@ nav a:nth-child(2) {
 
 #work {
     text-align: center;
-    min-height: 100vh;
 }
 
 .project img {
     width: 100%;
     border: 1px solid #b1b1b1;
-/*    border-top: 1px solid #b1b1b1;*/
-/*    border-bottom: 1px solid #b1b1b1;*/
-/*    opacity: 0.8;*/
-}
-
-.project img:hover {
-/*    opacity: 1;*/
 }
 .project-info {
     padding: 10px 20px 40px 20px;
 }
-/* ========== ABOUT ========== */
 
-#about {
-    min-height: calc(100vh - 61px - 65px);
+/* ========== SHOW ========== */
+
+#project img {
+    width: 100%;
+    border: 1px solid #b1b1b1;
 }
+
+/* ========== ABOUT ========== */
 
 #about img {
     width: 100%;
@@ -313,10 +336,6 @@ footer img {
 @media only screen and (max-width: 600px) {
     
     .container-small {
-/*
-        width: 100%;
-        padding: 0;
-*/
         width: calc(100% - 20px);
         padding: 10px 10px;
     }

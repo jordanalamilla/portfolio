@@ -25,9 +25,7 @@
         @include( 'inc/nav' )
         @include( 'inc/messages' )
 
-        <main>
-            @yield('content')
-        </main>
+        @yield('content')
 
         @include( 'inc/footer' )
         

@@ -2,8 +2,6 @@
 
 @section( 'content' )
 
-<div class="light container-small">
-
     <!--LANDING-->
     <div class="light container-small">
         
@@ -34,41 +32,48 @@
     </div>
 
     <!--WORK-->
-    <div id="work">
 
-        @if( !count( $projects ) )
+    <div class="light container-small">
 
-            <p>No projects.</p>
-    
-        @else
+        <div id="work">
 
-            @foreach( $projects as $project )
+            @if( !count( $projects ) )
 
-                <img class="untouchable"
-                    src="/storage/img/projects/image/{{ $project->image }}"
-                    alt="{{ $project->title }} by Jordan Alamilla">
+                <p>No projects.</p>
         
-                <div class="project-info untouchable">
+            @else
 
-                    <div class="project-title">
+                @foreach( $projects as $project )
 
-                        <a href="/projects/{{ $project->id }}">
-                            <h2>{{ $project->title }}</h2>
-                        </a>
-                        
+                    <div class="project">
+
+                        <img class="untouchable"
+                            src="/storage/img/projects/image/{{ $project->image }}"
+                            alt="{{ $project->title }} by Jordan Alamilla">
+                
+                        <div class="project-info untouchable">
+
+                            <div class="project-title">
+
+                                <a href="/projects/{{ $project->id }}">
+                                    <h2>{{ $project->title }}</h2>
+                                </a>
+                                
+                            </div>
+
+                            <div class="light-text project-tech"><p>{{ $project->tech }}</p></div>
+
+                        </div>
+
                     </div>
 
-                    <div class="light-text project-tech"><p>{{ $project->tech }}</p></div>
+                @endforeach
 
-                </div>
+            @endif
 
-            @endforeach
-
-        @endif
+        </div>
 
     </div>
-
-</div>
 
 @include( 'contact' )
 
