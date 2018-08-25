@@ -1,0 +1,337 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/*Eric Meyers CSS Reset*/
+
+/*Custom CSS*/
+/* ========== IMPORTS ========== */
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+
+/* ========== COMMON ========== */
+
+body {
+    line-height: 1.8;
+    font-family: "Inconsolata", monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+strong { font-weight: 700; }
+
+
+
+/* ========== CONTAINERS ========== */
+
+.container-full, .container-small {
+    margin: 0 auto;
+}
+
+.container-full {
+    width: 100%;
+}
+
+.container-small {
+    width: 60%;
+    padding: 0 20%;
+}
+
+
+
+/* ========== HEADINGS ========== */
+
+h1, h2 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+
+
+/* ========== COLOR SCHEMES ========== */
+
+/* === LIGHT === */
+
+.light {
+    color: #111;
+    background-color: #FCFCFC;
+}
+
+.light a {
+    color: #111;
+}
+
+.light a:hover {
+    border-bottom: 1px solid #111;
+}
+
+/* === GREY === */
+
+.grey,
+.light-text {
+    color: #777;
+}
+
+.grey {
+    background-color: #EEE;
+}
+
+.grey a {
+    color: #777;
+}
+
+.grey a:hover {
+    border-bottom: 1px solid #777;
+}
+
+/* === DARK === */
+
+.dark {
+    color: #ccc;
+    background-color: #111;
+}
+
+.dark a {
+    color: #E2E2E2;
+}
+
+.dark a:hover {
+    border-bottom: 1px solid #E2E2E2;
+}
+
+
+
+/* ========== REUSABLE CLASSES ========== */
+
+.img-link, .img-link:hover {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.untouchable {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.button {
+    font-family: "Inconsolata", monospace;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #A78181;
+    color: #FFF;
+    padding: 10px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    border: none;
+}
+
+.button:hover {
+    border-bottom: none !important;
+}
+
+.next-section {
+    margin-top: 40px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.next-section a {
+    text-decoration: none;
+}
+
+
+
+/* ========== NAVIGATION ========== */
+
+nav {
+    display: block;
+    height: 40px;
+}
+
+nav a {
+    font-weight: 700;
+    line-height: normal;
+    margin: 10px;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+nav a:first-child {
+    margin-left: 0;
+}
+
+nav a:nth-child(2) {
+    margin-right: 0;
+}
+
+#nav-link-logo {
+    float: left;
+    font-size: 18px;
+}
+
+#nav-link {
+    float: right;
+}
+
+/* ========== LANDING ========== */
+
+#landing {
+/*    min-height: calc(100vh - 40px);*/
+    text-align: center;
+    clear: both;
+}
+
+#landing-image {
+    display: block;
+    width: 100%;
+}
+
+#landing img {
+    width: 100%;
+    max-width: 350px;
+    padding: 5vh 0;
+}
+#landing-intro {
+    display: inline-block;
+    padding: 20px;
+    max-width: 520px;
+}
+/* ========== WORK ========== */
+
+#work {
+    text-align: center;
+    min-height: 100vh;
+}
+
+.project img {
+    width: 100%;
+    border: 1px solid #b1b1b1;
+/*    border-top: 1px solid #b1b1b1;*/
+/*    border-bottom: 1px solid #b1b1b1;*/
+/*    opacity: 0.8;*/
+}
+
+.project img:hover {
+/*    opacity: 1;*/
+}
+.project-info {
+    padding: 10px 20px 40px 20px;
+}
+/* ========== ABOUT ========== */
+
+#about {
+    min-height: calc(100vh - 61px - 65px);
+}
+
+#about img {
+    width: 100%;
+}
+
+#about h1, #about p {
+    margin-bottom: 20px;
+}
+
+#about p {
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+/* ========== CONTACT ========== */
+
+#contact form {
+    max-width: 450px;
+    padding: 5vh calc((100% - 450px) / 2);
+}
+
+#contact form p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type=text], textarea
+{
+    font-family: "Inconsolata", monospace;
+    font-size: 14px;
+    color: #111;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+}
+
+input[type=text]
+{
+    border-bottom: 1px solid #CCC;
+    background: transparent;
+}
+
+textarea
+{
+    height: 100px;
+    border: 1px solid #CCC;
+}
+
+input[type=submit] {
+    width: 100%;
+}
+
+/* ========== FOOTER ========== */
+
+footer {
+    text-align: center;
+    height: 25px;
+    padding: 20px;
+    /*TOTAL HEIGHT: 65PX*/
+}
+footer a {
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer img {
+    display: inline-block;
+    width: 100%;
+    max-width: 350px;
+    opacity: 0.5;
+}
+/* ========== MOBILE ========== */
+
+@media only screen and (max-width: 1440px) {
+    
+    #landing {
+        min-height: calc(100vh - 40px);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .container-small {
+/*
+        width: 100%;
+        padding: 0;
+*/
+        width: calc(100% - 20px);
+        padding: 10px 10px;
+    }
+    
+    /* ========== LANDING ========== */
+    
+    #landing-intro {
+        padding: 20px;
+        display: inline-block;
+        text-align: left;
+    }
+    
+    /* ========== CONTACT ========== */
+    
+    #contact p {
+        text-align: left;
+    }
+}
