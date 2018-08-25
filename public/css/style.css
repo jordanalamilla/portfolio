@@ -35,7 +35,7 @@ strong { font-weight: 700; }
     padding: 0 20%;
 }
 
-#project, #login {
+#project, #login, #dash {
     min-height: calc(100vh - 40px - 65px);
 }
 
@@ -126,7 +126,7 @@ h1 {
     font-size: 14px;
     text-decoration: none;
     background-color: #A78181;
-    color: #FFF;
+    color: #FFF !important;
     padding: 10px;
     letter-spacing: 1px;
     border-radius: 2px;
@@ -304,6 +304,33 @@ textarea
 
 input[type=submit] {
     width: 100%;
+}
+
+/* ========== DASHBOARD ========== */
+
+#dash table {
+    width: 100%;
+    margin: 20px 0;
+}
+
+#dash a {
+    text-decoration: none;
+}
+
+#dash td:first-child {
+    width: 90%;
+}
+
+#dash td {
+    padding: 10px;
+}
+
+#dash tr {
+    border-bottom: 1px solid #CCC;
+}
+
+#dash tr:hover {
+    background-color: #EEE;
 }
 
 /* ========== FOOTER ========== */

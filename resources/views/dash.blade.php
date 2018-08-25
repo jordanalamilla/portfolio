@@ -2,44 +2,54 @@
 
 @section( 'content' )
 
-<table>
+<div class="light container-small">
+        
+    <div id="dash">
 
-    @if( !count( $projects ) )
+        <h1>Dashboard</h1>
 
-        <p>No projects.</p>
+        <table>
 
-    @else
+            @if( !count( $projects ) )
 
-        @foreach( $projects as $project )
+                <p>No projects.</p>
 
-            <tr>
-                <td><a href="/projects/{{ $project->id }}">{{ $project->title }}</a></td>
-                <td><a href="/projects/{{ $project->id }}/edit">edit</a></td>
+            @else
 
-                <td>
+                @foreach( $projects as $project )
 
-                    <form method="POST"
-                        action="/projects/{{ $project->id }}">
+                    <tr>
+                        <td><a href="/projects/{{ $project->id }}">{{ $project->title }}</a></td>
+                        <td><a href="/projects/{{ $project->id }}/edit">edit</a></td>
 
-                        <!--DELETE SPOOF-->
-                        <input type="hidden" name="_method" value="DELETE">
+                        <td>
 
-                        <!--CSRF-->
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <form method="POST"
+                                action="/projects/{{ $project->id }}">
 
-                        <input type="submit" value="Delete">
+                                <!--DELETE SPOOF-->
+                                <input type="hidden" name="_method" value="DELETE">
 
-                    </form>
+                                <!--CSRF-->
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                </td>
-            </tr>
+                                <input type="submit" value="X">
 
-        @endforeach
+                            </form>
 
-    @endif
+                        </td>
+                    </tr>
 
-</table>
+                @endforeach
 
-<a href="/projects/create">Add New Project</a>
+            @endif
+
+        </table>
+
+        <a class="button" href="/projects/create">Add New Project</a>
+
+    </div>
+
+</div>
 
 @endsection
