@@ -7,7 +7,7 @@
     <div id="project">
 
         <!--WALKTHROUGH GIF-->
-        <img src="/images/projects/gif/{{ $project->gif }}"
+        <img src="/storage/img/projects/gif/{{ $project->gif }}"
              alt="{{ $project->title }} walkthrough animated gif.">
 
         <!--TITLE-->

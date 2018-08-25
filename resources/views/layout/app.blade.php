@@ -22,6 +22,7 @@
     <body>
 
         @include( 'inc/nav' )
+        @include( 'inc/messages' )
 
         @yield('content')
 

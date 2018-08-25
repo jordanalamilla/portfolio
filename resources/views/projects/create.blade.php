@@ -7,8 +7,11 @@
     <div id="create">
 
         <form method="POST"
-              action="ProjectsController@store"
+              action="/projects"
               enctype="multipart/form-data">
+
+            <!--CSRF-->
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <!--TITLE-->
             <input type="text" name="title" placeholder="Title">
@@ -32,6 +35,8 @@
             <!--GIF-->
             <label for="gif">Site Walkthrough Gif</label>
             <input type="file" name="gif">
+
+            <input type="submit" value="Create">
 
             <!--CKEDITOR SCRIPT-->
             <script>

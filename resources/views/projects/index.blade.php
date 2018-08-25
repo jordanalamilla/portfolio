@@ -9,7 +9,7 @@
         @foreach( $projects as $project )
 
             <img class="untouchable"
-                 src="images/projects/image/{{ $project->image }}"
+                 src="/storage/img/projects/image/{{ $project->image }}"
                  alt="{{ $project->title }} by Jordan Alamilla">
     
             <div class="project-info untouchable">
