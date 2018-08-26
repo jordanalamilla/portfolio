@@ -24,7 +24,7 @@
 
                         <td>
 
-                            <form method="POST"
+                            {{-- <form method="POST"
                                 action="/projects/{{ $project->id }}">
 
                                 <!--DELETE SPOOF-->
@@ -35,7 +35,10 @@
 
                                 <input type="submit" value="X">
 
-                            </form>
+                            </form> --}}
+
+                            <button class="delete-button"
+                                    data-id="{{ $project->id }}">Delete</button>
 
                         </td>
                     </tr>

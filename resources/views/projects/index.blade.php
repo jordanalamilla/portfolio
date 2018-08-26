@@ -33,7 +33,7 @@
 
     <!--WORK-->
 
-    <div class="light container-small">
+    <div class="light container-full">
 
         <div id="work">
 
