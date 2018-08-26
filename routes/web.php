@@ -11,11 +11,20 @@
 |
 */
 
+# HOME
 Route::get('/', 'ProjectsController@index');
+
+# ABOUT
 Route::get('/about', 'PagesController@about');
 
+#PROJECTS RESOURCE
 Route::resource('/projects', 'ProjectsController');
 
+# AUTHENTICATION RESOURCE
 Auth::routes();
 
+# DASHBOARD
 Route::get('/dash', 'DashController@index')->name('dash');
+
+# MAIL
+Route::post( '/send', 'MailController@send' );

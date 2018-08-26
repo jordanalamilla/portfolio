@@ -35,7 +35,7 @@ strong { font-weight: 700; }
     padding: 0 20%;
 }
 
-#project, #login, #dash, #edit, #create {
+#project, #about, #login, #dash, #edit, #create {
     min-height: calc(100vh - 40px - 65px);
 }
 
@@ -250,7 +250,8 @@ nav a:nth-child(2) {
 
 .project img {
     width: 100%;
-    border: 1px solid #b1b1b1;
+    border-top: 1px solid #b1b1b1;
+    border-bottom: 1px solid #b1b1b1;
 }
 .project-info {
     padding: 10px 20px 40px 20px;

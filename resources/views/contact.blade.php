@@ -4,21 +4,23 @@
         
     <div id="contact">
 
-        <form>
+        <form method="POST" action="/send">
+
+            @csrf
             
             <p class="light-text">I am currently available for hire. If you would like to work with me or have any quesions of comments about my work, please don't hesitate to send me a message.</p>
 
             <div class="form-input">
 
                 <input type="text"
-                        name="email"
+                        name="sender"
                         placeholder="Email Address">
             </div>
 
             <div class="form-input">
 
-                <textarea name="message"
-                            placeholder="Message"></textarea>
+                <textarea name="content"
+                          placeholder="Message"></textarea>
             </div>
 
             <input type="submit"
