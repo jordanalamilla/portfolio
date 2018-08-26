@@ -35,7 +35,7 @@ strong { font-weight: 700; }
     padding: 0 20%;
 }
 
-#project, #login, #dash {
+#project, #login, #dash, #edit, #create {
     min-height: calc(100vh - 40px - 65px);
 }
 
@@ -125,7 +125,8 @@ h1 {
     text-transform: uppercase;
     font-size: 14px;
     text-decoration: none;
-    background-color: #A78181;
+    /* background-color: #A78181; */
+    background-color: #F00;
     color: #FFF !important;
     padding: 10px;
     letter-spacing: 1px;
@@ -174,11 +175,14 @@ h1 {
     padding: 10px;
 }
 
-#dash input[type=submit] {
-    background: transparent;
-    border: none;
-    font-weight: 700;
-    cursor: pointer;
+form #editor {
+    height: 300px;
+}
+
+.image-uploader {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #CCC;
 }
 
 
@@ -315,6 +319,10 @@ input[type=submit] {
 
 /* ========== DASHBOARD ========== */
 
+#dash {
+    font-weight: 700;
+}
+
 #dash table {
     width: 100%;
     margin: 20px 0;
@@ -338,6 +346,20 @@ input[type=submit] {
 
 #dash tr:hover {
     background-color: #EEE;
+}
+
+#dash a:hover, #dash .delete-button:hover {
+    color: #F00;
+}
+
+#dash a:hover {
+    border-bottom: none;
+}
+
+#dash .delete-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 /* ========== FOOTER ========== */

@@ -4,9 +4,7 @@ $( function() {
 
     function deleteProject() {
 
-        console.log( 'clicked' );
-
-        var confirmation = confirm( 'Are you sure?' );
+        var confirmation = confirm( 'Are you sure you want to delete "' + $( this ).data( 'title' ) + '"?' );
 
         if( confirmation )
         {
@@ -32,5 +30,4 @@ $( function() {
             return false;
         }
     }
-
 });

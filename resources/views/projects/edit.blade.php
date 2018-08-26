@@ -6,6 +6,8 @@
 
     <div id="edit">
 
+        <h1>Edit {{ $project->title }}</h1>
+
         <form method="POST"
               action="/projects/{{ $project->id }}"
               enctype="multipart/form-data">
@@ -32,14 +34,18 @@
             <input type="text" name="link_github" placeholder="Link to Project on Github" value="{{ $project->link_github }}">
 
             <!--IMAGE-->
-            <label for="image">Change Project Image</label>
-            <input type="file" name="image">
+            <div class="image-uploader">
+                <label for="image">Change Project Image:</label>
+                <input type="file" name="image">
+            </div>
 
             <!--GIF-->
-            <label for="gif">Change Site Walkthrough Gif</label>
-            <input type="file" name="gif">
+            <div class="image-uploader">
+                <label for="gif">Change Site Walkthrough Gif:</label>
+                <input type="file" name="gif">
+            </div>
 
-            <input type="submit" value="Update">
+            <input class="button" type="submit" value="Update">
 
             <!--CKEDITOR SCRIPT-->
             <script>

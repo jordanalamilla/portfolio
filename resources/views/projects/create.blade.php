@@ -6,6 +6,8 @@
 
     <div id="create">
 
+        <h1>Add New Project</h1>
+
         <form method="POST"
               action="/projects"
               enctype="multipart/form-data">
@@ -29,14 +31,18 @@
             <input type="text" name="link_github" placeholder="Link to Project on Github">
 
             <!--IMAGE-->
-            <label for="image">Project Image</label>
-            <input type="file" name="image">
+            <div class="image-uploader">
+                <label for="image">Project Image</label>
+                <input type="file" name="image">
+            </div>
 
             <!--GIF-->
-            <label for="gif">Site Walkthrough Gif</label>
-            <input type="file" name="gif">
+            <div class="image-uploader">
+                <label for="gif">Site Walkthrough Gif</label>
+                <input type="file" name="gif">
+            </div>
 
-            <input type="submit" value="Create">
+            <input class="button" type="submit" value="Create">
 
             <!--CKEDITOR SCRIPT-->
             <script>

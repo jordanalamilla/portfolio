@@ -20,25 +20,13 @@
 
                     <tr>
                         <td><a href="/projects/{{ $project->id }}">{{ $project->title }}</a></td>
-                        <td><a href="/projects/{{ $project->id }}/edit">edit</a></td>
+                        <td><a href="/projects/{{ $project->id }}/edit"><i class="fas fa-pencil-alt"></i></a></td>
 
                         <td>
 
-                            {{-- <form method="POST"
-                                action="/projects/{{ $project->id }}">
-
-                                <!--DELETE SPOOF-->
-                                <input type="hidden" name="_method" value="DELETE">
-
-                                <!--CSRF-->
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                                <input type="submit" value="X">
-
-                            </form> --}}
-
                             <button class="delete-button"
-                                    data-id="{{ $project->id }}">Delete</button>
+                                    data-id="{{ $project->id }}"
+                                    data-title="{{ $project->title }}"><i class="fas fa-times"></i></button>
 
                         </td>
                     </tr>
