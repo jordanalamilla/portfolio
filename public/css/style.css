@@ -267,7 +267,7 @@ nav a:nth-child(2) {
 }
 #landing-intro {
     display: inline-block;
-    padding: 20px;
+    /* padding: 20px; */
     max-width: 520px;
 }
 /* ========== WORK ========== */
@@ -276,20 +276,47 @@ nav a:nth-child(2) {
     text-align: center;
 }
 
-.project img {
+.work-project img {
     width: 100%;
     border-top: 1px solid #b1b1b1;
     border-bottom: 1px solid #b1b1b1;
 }
-.project-info {
+
+#work a {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.work-project-info {
     padding: 10px 20px 40px 20px;
 }
 
-/* ========== SHOW ========== */
+/* ========== PROJECT ========== */
 
 #project img {
     width: 100%;
     border: 1px solid #b1b1b1;
+}
+
+#project img:hover {
+    opacity: 0.8;
+}
+
+#project a {
+    border-bottom: none;
+}
+
+#project-description, #project-tech {
+    padding: 20px 0;
+}
+
+#project-description {
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+#project-tech {
+    font-weight: 700;
 }
 
 /* ========== ABOUT ========== */
@@ -305,6 +332,10 @@ nav a:nth-child(2) {
 #about p {
     text-transform: none;
     letter-spacing: normal;
+}
+
+#about-links {
+    padding: 20px 0;
 }
 
 /* ========== CONTACT ========== */
