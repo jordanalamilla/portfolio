@@ -5,6 +5,7 @@
         <a target="_blank" href="https://github.com/jordanalamilla">Github</a>
         <a target="_blank" href="https://www.linkedin.com/in/jordanalamilla/">LinkedIn</a>
         <a target="_blank" href="https://blog.jordanalamilla.ca/">Blog</a>
+        {{-- <a target="_blank" href="https://instagram.com/jordanalamilla">Instagram</a> --}}
 
         @guest
 
@@ -24,6 +25,8 @@
             </form>
 
         @endguest
+
+        <p>&copy; Jordan Alamilla // 2018</p>
 
     </footer>
 

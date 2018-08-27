@@ -36,7 +36,7 @@ strong { font-weight: 700; }
 }
 
 #project, #about, #login, #dash, #edit, #create {
-    min-height: calc(100vh - 40px - 65px);
+    min-height: calc(100vh - 40px - 90px);
 }
 
 /* ========== HEADINGS ========== */
@@ -426,9 +426,9 @@ input[type=submit] {
 
 footer {
     text-align: center;
-    height: 25px;
+    height: 50px;
     padding: 20px;
-    /*TOTAL HEIGHT: 65PX*/
+    /*TOTAL HEIGHT: 90PX*/
 }
 footer a {
     text-decoration: none;
